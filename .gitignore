@@ -19,6 +19,7 @@ build/
 # Reproducible run products are local; only the curated reported snapshot is versioned.
 /artifacts/
 /outputs/
+/manuscript/
 
 # Local credentials and editor state.
 .env
