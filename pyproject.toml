@@ -7,9 +7,18 @@ name = "transition-matrix-ecg"
 version = "1.0.0"
 description = "Reproducible CARDIA-X ECG transition-matrix and rough-set research software."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.14"
 license = { text = "MIT" }
 authors = [{ name = "Pavlo Radiuk" }]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+urls = { Repository = "https://github.com/radiukpavlo/transition-matrix-cardia-x", Issues = "https://github.com/radiukpavlo/transition-matrix-cardia-x/issues" }
 dependencies = [
   "numpy==2.4.6; python_version < '3.14'",
   "scipy==1.18.0; python_version < '3.14'",
@@ -37,6 +46,7 @@ dev = [
 [project.scripts]
 tm-ecg = "tm_ecg.cli:main"
 tm-ecg-verify-reported = "tm_ecg.reported_results:main"
+tm-ecg-verify-manifest = "tm_ecg.reproducibility:main"
 
 [tool.setuptools]
 package-dir = { "" = "src" }

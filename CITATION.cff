@@ -8,7 +8,7 @@ license: MIT
 authors:
   - family-names: Radiuk
     given-names: Pavlo
-repository-code: "https://github.com/radiukpavlo/transition-matrix-ecg"
+repository-code: "https://github.com/radiukpavlo/transition-matrix-cardia-x"
 keywords:
   - electrocardiography
   - explainable artificial intelligence
@@ -16,3 +16,16 @@ keywords:
   - rough sets
   - clinical decision support
   - reproducible research
+preferred-citation:
+  type: article
+  title: "CARDIA-X: Global Semantic Transition and Rough-Set Rules for Auditable Post-hoc Electrocardiographic Explainability"
+  authors:
+    - family-names: Radiuk
+      given-names: Pavlo
+    - family-names: Barmak
+      given-names: Oleksander
+    - family-names: Klymenko
+      given-names: Liliana
+    - family-names: Krak
+      given-names: Iurii
+  year: 2026

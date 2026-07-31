@@ -1,6 +1,6 @@
 [project]
 name = "transition-matrix-ecg"
-version = "0.1.0"
+version = "1.0.0"
 ontology_version = "2026-07-21-v3"
 seed = 17
 

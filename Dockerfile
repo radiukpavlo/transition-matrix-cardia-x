@@ -14,9 +14,14 @@ ENV PYTHONHASHSEED=0 \
 WORKDIR /workspace
 COPY requirements.lock pyproject.toml README.md ./
 COPY src ./src
+COPY configs ./configs
+COPY clinical_validation/config ./clinical_validation/config
+COPY results ./results
+COPY schemas ./schemas
 RUN python -m pip install --no-cache-dir --upgrade pip==25.2 \
     && python -m pip install --no-cache-dir -r requirements.lock \
-    && python -m pip install --no-cache-dir --no-deps .
+    && python -m pip install --no-cache-dir --no-deps . \
+    && tm-ecg-verify-reported
 
 ENTRYPOINT ["tm-ecg"]
 CMD ["doctor"]

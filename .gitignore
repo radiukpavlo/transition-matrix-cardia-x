@@ -5,6 +5,11 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 .coverage
+coverage.xml
+htmlcov/
+.hypothesis/
+.tox/
+.nox/
 .venv/
 dist/
 build/
@@ -19,6 +24,7 @@ build/
 # Reproducible run products are local; only the curated reported snapshot is versioned.
 /artifacts/
 /outputs/
+/.tmp_test_splits/
 /manuscript/
 
 # Local credentials and editor state.

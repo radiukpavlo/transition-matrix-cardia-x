@@ -59,6 +59,19 @@ def test_b1_pipeline_orders_model_transition_and_reporting_stages() -> None:
     assert context.calls[report_index][1]["warn"] is True
 
 
+def test_verify_task_runs_all_offline_public_checks() -> None:
+    context = _RecordingContext()
+
+    tasks.verify.body(context)
+
+    assert context.commands == [
+        "python -m tm_ecg.reproducibility",
+        "python -m tm_ecg.reported_results",
+        "python -m pytest -q",
+    ]
+    assert all(call[1]["env"] == {"PYTHONPATH": "src"} for call in context.calls)
+
+
 def test_pipeline_writes_report_before_propagating_rule_gate_failure() -> None:
     context = _RecordingContext(dss_exit=8)
     try:

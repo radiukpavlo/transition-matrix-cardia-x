@@ -19,6 +19,14 @@ def verify_reported(c):
 
 
 @task
+def verify(c):
+    """Run the offline public-snapshot verification suite."""
+    c.run("python -m tm_ecg.reproducibility", env={"PYTHONPATH": "src"})
+    c.run("python -m tm_ecg.reported_results", env={"PYTHONPATH": "src"})
+    c.run("python -m pytest -q", env={"PYTHONPATH": "src"})
+
+
+@task
 def pipeline(c, dataset="b1", verbose=False):
     """Run the reported PTB-XL (b1) or LUDB (b2) computational workflow."""
     if dataset not in {"b1", "b2"}:
