@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transition-matrix-ecg"
+version = "1.0.0"
+description = "Reproducible CARDIA-X ECG transition-matrix and rough-set research software."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Pavlo Radiuk" }]
+dependencies = [
+  "numpy==2.4.6; python_version < '3.14'",
+  "scipy==1.18.0; python_version < '3.14'",
+  "pandas==3.0.3; python_version < '3.14'",
+  "pyarrow==24.0.0; python_version < '3.14'",
+  "scikit-learn==1.9.0; python_version < '3.14'",
+  "wfdb==4.3.1; python_version < '3.14'",
+  "matplotlib==3.11.1; python_version < '3.14'",
+  "python-dateutil==2.9.0.post0",
+  "six==1.17.0",
+  "openpyxl==3.1.5",
+]
+
+[project.optional-dependencies]
+train = [
+  "torch==2.13.0; python_version < '3.14'",
+]
+dev = [
+  "pytest==9.1.1",
+  "ruff==0.15.22",
+  "invoke==3.0.3",
+  "mypy==2.3.0",
+]
+
+[project.scripts]
+tm-ecg = "tm_ecg.cli:main"
+tm-ecg-verify-reported = "tm_ecg.reported_results:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true

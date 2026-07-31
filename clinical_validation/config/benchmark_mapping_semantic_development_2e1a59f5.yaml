@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "confidence_bands": {"accepted_min": 80, "uncertain_min": 50, "ignored_below": 50},
+  "categorical_presence_terms": ["ABQRS", "AFIB", "AFLT", "BIGU", "DIG", "HVOLT", "INVT", "LNGQT", "LOWT", "LPR", "LVOLT", "NDT", "NST_", "NT_", "PACE", "PAC", "PRC(S)", "PSVT", "PVC", "QWAVE", "SARRH", "SBRAD", "SR", "STACH", "STD_", "STE_", "SVARR", "SVTAC", "TAB_", "TRIGU", "VCLVH"],
+  "rules": [
+    {"id": "BENCH-NORMAL", "axis": "rhythm", "finding": "sinus", "match": "exact_ci", "terms": ["Normal", "NORM", "normal sinus rhythm"]},
+    {"id": "BENCH-NORMALITY", "axis": "normality", "finding": "normal", "match": "exact_ci", "terms": ["Normal", "NORM", "normal sinus rhythm"]},
+    {"id": "BENCH-SINUS-RHYTHM", "axis": "rhythm", "finding": "sinus", "match": "exact_ci", "terms": ["SR", "SARRH", "SBRAD", "STACH"]},
+    {"id": "BENCH-AF", "axis": "rhythm", "finding": "af", "match": "exact_ci", "terms": ["AF", "AFIB", "atrial fibrillation"]},
+    {"id": "BENCH-AFL", "axis": "rhythm", "finding": "afl", "match": "exact_ci", "terms": ["AFL", "AFLT", "atrial flutter"]},
+    {"id": "BENCH-OTHER-RHYTHM", "axis": "rhythm", "finding": "other_arrhythmia", "match": "exact_ci", "terms": ["PSVT", "SVARR", "SVTAC"]},
+    {"id": "BENCH-PVC", "axis": "ectopy", "finding": "ventricular_premature", "match": "exact_ci", "terms": ["PVC", "VPB", "ventricular extrasystole"]},
+    {"id": "BENCH-APB", "axis": "ectopy", "finding": "atrial_premature", "match": "exact_ci", "terms": ["APB", "PAC", "SPAC", "SVPB", "atrial extrasystole", "supraventricular ectopy"]},
+    {"id": "BENCH-ECTOPY-UNSPEC", "axis": "ectopy", "finding": "unspecified_ectopy", "match": "exact_ci", "terms": ["BIGU", "PRC(S)", "TRIGU"]},
+    {"id": "BENCH-RBBB", "axis": "conduction", "finding": "rbbb_spectrum", "match": "exact_ci", "terms": ["RBBB spectrum", "RBBB", "CRBBB", "IRBBB", "right bundle branch block"]},
+    {"id": "BENCH-LBBB", "axis": "conduction", "finding": "lbbb_spectrum", "match": "exact_ci", "terms": ["LBBB spectrum", "LBBB", "CLBBB", "left bundle branch block"]},
+    {"id": "BENCH-IVCD", "axis": "conduction", "finding": "other_conduction", "match": "exact_ci", "terms": ["1AVB", "IVCD", "ILBBB", "LPR", "WPW", "LAFB", "LPFB"]},
+    {"id": "BENCH-STE", "axis": "repolarization", "finding": "st_elevation", "match": "exact_ci", "terms": ["STE_", "ST elevation", "ST-elevation"]},
+    {"id": "BENCH-STD", "axis": "repolarization", "finding": "st_depression", "match": "exact_ci", "terms": ["STD_", "ST depression", "ST-depression"]},
+    {"id": "BENCH-T", "axis": "repolarization", "finding": "t_wave_abnormality", "match": "exact_ci", "terms": ["INVT", "LOWT", "NDT", "NT_", "TAB_", "T-wave abnormality"]},
+    {"id": "BENCH-STT", "axis": "repolarization", "finding": "nonspecific_st_t", "match": "exact_ci", "terms": ["NST_", "DIG", "ISC_", "ISCA", "ISCI", "ISCL", "STTC"]},
+    {"id": "BENCH-QTC", "axis": "repolarization", "finding": "qtc_abnormality", "match": "exact_ci", "terms": ["LNGQT", "Long QT"]},
+    {"id": "BENCH-PACED", "axis": "pacing", "finding": "present", "match": "exact_ci", "terms": ["PACE", "Paced", "paced rhythm", "pacemaker"]},
+    {"id": "BENCH-OTHER", "axis": "residual", "finding": "other_abnormal", "match": "exact_ci", "terms": ["Other / unmapped", "Other abnormal"]}
+  ]
+}

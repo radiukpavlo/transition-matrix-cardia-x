@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "confidence_bands": {"accepted_min": 80, "uncertain_min": 50, "ignored_below": 50},
+  "rules": [
+    {"id": "BENCH-NORMAL", "axis": "rhythm", "finding": "sinus", "match": "exact_ci", "terms": ["Normal", "NORM", "normal sinus rhythm"]},
+    {"id": "BENCH-NORMALITY", "axis": "normality", "finding": "normal", "match": "exact_ci", "terms": ["Normal", "NORM", "normal sinus rhythm"]},
+    {"id": "BENCH-AF", "axis": "rhythm", "finding": "af", "match": "exact_ci", "terms": ["AF", "AFIB", "atrial fibrillation"]},
+    {"id": "BENCH-AFL", "axis": "rhythm", "finding": "afl", "match": "exact_ci", "terms": ["AFL", "AFLT", "atrial flutter"]},
+    {"id": "BENCH-PVC", "axis": "ectopy", "finding": "ventricular_premature", "match": "exact_ci", "terms": ["PVC", "VPB", "ventricular extrasystole"]},
+    {"id": "BENCH-APB", "axis": "ectopy", "finding": "atrial_premature", "match": "exact_ci", "terms": ["APB", "PAC", "SPAC", "SVPB", "atrial extrasystole", "supraventricular ectopy"]},
+    {"id": "BENCH-RBBB", "axis": "conduction", "finding": "rbbb_spectrum", "match": "exact_ci", "terms": ["RBBB spectrum", "RBBB", "CRBBB", "IRBBB", "right bundle branch block"]},
+    {"id": "BENCH-LBBB", "axis": "conduction", "finding": "lbbb_spectrum", "match": "exact_ci", "terms": ["LBBB spectrum", "LBBB", "CLBBB", "left bundle branch block"]},
+    {"id": "BENCH-IVCD", "axis": "conduction", "finding": "other_conduction", "match": "exact_ci", "terms": ["IVCD", "ILBBB", "WPW", "LAFB", "LPFB"]},
+    {"id": "BENCH-STE", "axis": "repolarization", "finding": "st_elevation", "match": "exact_ci", "terms": ["STE_", "ST elevation", "ST-elevation"]},
+    {"id": "BENCH-STD", "axis": "repolarization", "finding": "st_depression", "match": "exact_ci", "terms": ["STD_", "ST depression", "ST-depression"]},
+    {"id": "BENCH-T", "axis": "repolarization", "finding": "t_wave_abnormality", "match": "exact_ci", "terms": ["NDT", "NT_", "TAB_", "T-wave abnormality"]},
+    {"id": "BENCH-STT", "axis": "repolarization", "finding": "nonspecific_st_t", "match": "exact_ci", "terms": ["NST_", "DIG", "ISC_", "ISCA", "ISCI", "ISCL", "STTC"]},
+    {"id": "BENCH-QTC", "axis": "repolarization", "finding": "qtc_abnormality", "match": "exact_ci", "terms": ["LNGQT", "Long QT"]},
+    {"id": "BENCH-PACED", "axis": "pacing", "finding": "present", "match": "exact_ci", "terms": ["Paced", "paced rhythm", "pacemaker"]},
+    {"id": "BENCH-OTHER", "axis": "residual", "finding": "other_abnormal", "match": "exact_ci", "terms": ["Other / unmapped", "Other abnormal"]}
+  ]
+}

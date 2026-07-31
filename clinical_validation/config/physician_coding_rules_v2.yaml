@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "text_rules": [
+    {"id": "PHYS-RHY-SINUS", "axis": "rhythm", "finding": "sinus", "terms": ["normal ecg", "normal electrocardiogram", "sinus rhythm", "sinus tachycardia", "sinus bradycardia"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-RHY-AF", "axis": "rhythm", "finding": "af", "terms": ["atrial fibrillation", "afib", "af"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-RHY-AFL", "axis": "rhythm", "finding": "afl", "terms": ["atrial flutter", "afl"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-ECT-PVC", "axis": "ectopy", "finding": "ventricular_premature", "terms": ["premature ventricular complexes", "premature ventricular complex", "ventricular premature beats", "ventricular premature beat", "pvc", "vpbs"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-ECT-APB", "axis": "ectopy", "finding": "atrial_premature", "terms": ["premature atrial complexes", "premature atrial complex", "atrial premature beats", "atrial premature beat", "premature atrial beats", "pac", "apb"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-ECT-UNSPEC", "axis": "ectopy", "finding": "unspecified_ectopy", "terms": ["premature beats", "premature beat", "ectopy", "extrasystole"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-CON-RBBB", "axis": "conduction", "finding": "rbbb_spectrum", "terms": ["right bundle branch block", "rbbb"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-CON-LBBB", "axis": "conduction", "finding": "lbbb_spectrum", "terms": ["left bundle branch block", "lbbb"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-CON-OTHER", "axis": "conduction", "finding": "other_conduction", "terms": ["intraventricular conduction delay", "bundle branch pattern", "wide qrs"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-REP-STE", "axis": "repolarization", "finding": "st_elevation", "terms": ["st elevation", "st-segment elevation"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-REP-STD", "axis": "repolarization", "finding": "st_depression", "terms": ["st depression", "st-segment depression"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-REP-T", "axis": "repolarization", "finding": "t_wave_abnormality", "terms": ["t-wave inversion", "t wave inversion", "t-wave abnormality", "t wave abnormality"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-REP-STT", "axis": "repolarization", "finding": "nonspecific_st_t", "terms": ["st deviation", "st-t abnormality", "st t abnormality", "repolarization abnormality"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-REP-QTC", "axis": "repolarization", "finding": "qtc_abnormality", "terms": ["qtc prolongation", "prolonged qtc", "qtc abnormality"], "fields": ["primary_diagnosis", "rationale"]},
+    {"id": "PHYS-PACE", "axis": "pacing", "finding": "present", "terms": ["paced rhythm", "pacemaker", "paced morphology", "pacing spikes"], "fields": ["primary_diagnosis", "rationale"]}
+  ],
+  "evidence_rules": [
+    {"id": "PHYS-EV-RR", "field": "evidence_rr_irregularity", "axis": "rhythm", "finding": "other_arrhythmia", "certainty": "definite"},
+    {"id": "PHYS-EV-WIDE", "field": "evidence_wide_qrs", "axis": "conduction", "finding": "other_conduction", "certainty": "definite"},
+    {"id": "PHYS-EV-BBB", "field": "evidence_bundle_branch_pattern", "axis": "conduction", "finding": "other_conduction", "certainty": "definite"},
+    {"id": "PHYS-EV-PREM", "field": "evidence_premature_beat", "axis": "ectopy", "finding": "unspecified_ectopy", "certainty": "definite"},
+    {"id": "PHYS-EV-PACED", "field": "evidence_paced_morphology", "axis": "pacing", "finding": "present", "certainty": "definite"},
+    {"id": "PHYS-EV-ST", "field": "evidence_st_deviation", "axis": "repolarization", "finding": "nonspecific_st_t", "certainty": "definite"},
+    {"id": "PHYS-EV-QTC", "field": "evidence_qtc_abnormality", "axis": "repolarization", "finding": "qtc_abnormality", "certainty": "definite"},
+    {"id": "PHYS-EV-OTHER", "field": "evidence_other", "axis": "residual", "finding": "other_abnormal", "certainty": "definite"}
+  ],
+  "uninterpretable_terms": ["artifact prevents assessment", "uninterpretable", "cannot assess due to artifact", "too noisy to interpret"]
+}
+

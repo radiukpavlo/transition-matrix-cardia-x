@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "from_registry": "clinical_validation/config/scenario_registry_v2.yaml",
+  "from_registry_sha256": "42a8ca0db2c2ec9233f0fc0942132a3b902309b7538440582db5e7701aa5678e",
+  "to_registry": "clinical_validation/config/scenario_registry_v3.yaml",
+  "reason": "Split the immutable v2 audit endpoint from the harmonized v3 endpoint and align required thresholds with the registered acceptance contract.",
+  "required_scenario_migrations": {
+    "b1_unique_exact": ["raw_b1_unique_exact", "harmonized_b1_unique_exact"],
+    "b1_unique_five_family": ["raw_b1_unique_five_family", "harmonized_b1_unique_five_family"],
+    "b1_unique_binary": ["raw_b1_unique_binary", "harmonized_b1_unique_binary"],
+    "b1_unique_dominant": ["raw_b1_unique_dominant", "harmonized_b1_unique_dominant"],
+    "b1_axis_rhythm": ["raw_b1_axis_rhythm", "harmonized_b1_axis_rhythm_exact"],
+    "b1_axis_ectopy": ["raw_b1_axis_ectopy", "harmonized_b1_axis_ectopy_exact"],
+    "b1_axis_conduction": ["raw_b1_axis_conduction", "harmonized_b1_axis_conduction_exact"],
+    "b1_axis_repolarization": ["raw_b1_axis_repolarization", "harmonized_b1_axis_repolarization_exact"],
+    "b1_axis_pacing": ["raw_b1_axis_pacing", "harmonized_b1_axis_pacing"],
+    "b1_axis_rhythm_presence": ["harmonized_b1_axis_rhythm_presence"],
+    "b1_axis_ectopy_presence": ["harmonized_b1_axis_ectopy_presence"],
+    "b1_axis_conduction_presence": ["harmonized_b1_axis_conduction_presence"],
+    "b1_axis_repolarization_presence": ["harmonized_b1_axis_repolarization_presence"]
+  },
+  "removed_required_scenarios_without_successor": []
+}

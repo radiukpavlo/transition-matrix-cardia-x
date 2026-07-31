@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.venv/
+dist/
+build/
+
+# Public datasets are downloaded separately.
+/data/archives/*
+!/data/archives/.gitkeep
+/data/raw/
+/data/interim/
+/data/processed/
+
+# Reproducible run products are local; only the curated reported snapshot is versioned.
+/artifacts/
+/outputs/
+
+# Local credentials and editor state.
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store

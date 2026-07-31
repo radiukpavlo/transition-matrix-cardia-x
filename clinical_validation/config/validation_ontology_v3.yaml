@@ -1,0 +1,72 @@
+{
+  "version": 3,
+  "name": "CARDIA-X harmonized multiaxial validation ontology",
+  "source_contract": "ptbxl_1.0.3",
+  "physician_contract": "physician_coding_v3.0.0",
+  "axes": {
+    "rhythm": [
+      "sinus",
+      "sinus_bradycardia",
+      "sinus_tachycardia",
+      "af",
+      "afl",
+      "other_arrhythmia",
+      "indeterminate"
+    ],
+    "ectopy": [
+      "atrial_premature",
+      "ventricular_premature",
+      "mixed_ectopy",
+      "unspecified_ectopy",
+      "indeterminate"
+    ],
+    "conduction": [
+      "rbbb_spectrum",
+      "lbbb_spectrum",
+      "other_conduction",
+      "unspecified_conduction",
+      "indeterminate"
+    ],
+    "repolarization": [
+      "st_elevation",
+      "st_depression",
+      "t_wave_abnormality",
+      "nonspecific_st_t",
+      "qtc_abnormality",
+      "unspecified_repolarization",
+      "indeterminate"
+    ],
+    "pacing": ["absent", "present", "indeterminate"],
+    "normality": ["normal", "abnormal", "indeterminate"],
+    "quality": ["adequate", "noisy_artifact", "indeterminate"],
+    "interpretability": [
+      "interpretable",
+      "limited",
+      "uninterpretable",
+      "indeterminate"
+    ]
+  },
+  "dominant_priority": [
+    "Paced",
+    "AF",
+    "AFL",
+    "PVC",
+    "APB",
+    "Mixed ectopy",
+    "Unspecified ectopy",
+    "RBBB spectrum",
+    "LBBB spectrum",
+    "Other conduction",
+    "Unspecified conduction",
+    "ST elevation",
+    "ST depression",
+    "T-wave abnormality",
+    "Nonspecific ST-T",
+    "QTc abnormality",
+    "Unspecified repolarization",
+    "Other abnormal",
+    "Normal",
+    "Uninterpretable",
+    "Indeterminate"
+  ]
+}

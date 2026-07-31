@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "workbook": {
+    "path": "clinical_validation/review/CARDIA-X_clinical_validation_v6.xlsx",
+    "sha256": "fdf9a9a2d9259a5f574ba34aa9e8a601dfc7f29f11f4b5f993b3347a17d5fd2c",
+    "immutable": true
+  },
+  "canonical_unassisted_response_source": {
+    "sheet": "Response_Export",
+    "normalized_payload_sha256": "8a2e495e3e7aee274e39768b52afbe20013f6e6fc7c5837c2a474d48ea4fb454",
+    "fields": [
+      "primary_diagnosis",
+      "rationale",
+      "diagnostic_confidence",
+      "ecg_quality",
+      "ambiguous",
+      "requires_additional_information",
+      "evidence_rr_irregularity",
+      "evidence_absent_p_waves",
+      "evidence_premature_beat",
+      "evidence_wide_qrs",
+      "evidence_bundle_branch_pattern",
+      "evidence_st_deviation",
+      "evidence_paced_morphology",
+      "evidence_qtc_abnormality",
+      "evidence_lead_noise",
+      "evidence_other"
+    ]
+  },
+  "non_authoritative_mirrors": {
+    "per_case_sheets": {
+      "status": "deterministic_benchmark_stress_test",
+      "may_supply_physician_response": false
+    }
+  },
+  "conflict_policy": {
+    "edit_workbook": false,
+    "fail_on_unknown_conflict": true,
+    "emit_complete_conflict_ledger": true,
+    "expected_mirror_conflict_count": 973
+  },
+  "expected_population": {
+    "canonical_row_count": 150,
+    "unique_b1_case_count": 100
+  },
+  "signoff": {
+    "decision_id": "pending_project_owner_signoff",
+    "signed_by": null,
+    "signed_at_utc": null
+  },
+  "provenance_discrepancy": {
+    "plan_registered_sha256": "7435a32ddb064b6630627309736d9a4b37dff361b9f2edcb27a8c0c79f906e7f",
+    "previous_detached_v6_sha256": "58a7463933ef55f71d2695fff949dadbdcc97cc234b4143be09bda076d6bfe5e",
+    "note": "The current contract binds the v6 bytes independently verified against CARDIA_X_final_report_v2.md. Earlier plan and detached-v6 hashes are retained as discrepancies. The signoff remains pending."
+  }
+}

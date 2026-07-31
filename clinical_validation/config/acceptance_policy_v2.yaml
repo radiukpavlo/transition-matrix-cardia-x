@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "default_workbook": "clinical_validation/review/CARDIA-X_clinical_validation_v1.xlsx",
+  "default_provenance": "clinical_validation/cases/private/case_provenance.json",
+  "ontology": "clinical_validation/config/validation_ontology_v2.yaml",
+  "physician_rules": "clinical_validation/config/physician_coding_rules_v2.yaml",
+  "benchmark_mapping": "clinical_validation/config/benchmark_mapping_v2.yaml",
+  "scenario_registry": "clinical_validation/config/scenario_registry_v2.yaml",
+  "minimum_kappa": 0.70,
+  "required_not_estimable": "report_not_applicable",
+  "expected_population": {"total": 150, "b1_rows": 110, "b1_unique": 100, "b1_repeats": 10, "b2": 40},
+  "exit_codes": {"success": 0, "input_schema": 2, "retention": 3, "leakage": 4, "threshold": 5, "not_estimable": 6, "hash_mismatch": 7}
+}
+

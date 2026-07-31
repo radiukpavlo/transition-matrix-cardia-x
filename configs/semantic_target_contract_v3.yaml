@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "contract_id": "cardia_x_semantic_targets_v3",
+  "fit_policy": {
+    "training_values": "cross_fitted_or_source_independent_measurements_only",
+    "patient_grouping": "patient_id",
+    "missingness": "explicit_indicator_and_quality_state",
+    "forbidden_inputs": [
+      "scp_codes",
+      "compatibility_labels",
+      "12sl_diagnostic_statements",
+      "fold_assignment",
+      "clinical_validation_outcomes"
+    ]
+  },
+  "features": [
+    {"feature_id":"rhythm_sinus_probability","group":"rhythm","units":"probability","bounds":[0,1],"missingness":"missing_if_atrial_specialist_ineligible","provenance":"cross_fitted_atrial_rhythm_specialist"},
+    {"feature_id":"rr_irregularity_cv","group":"rhythm","units":"ratio","bounds":[0,2],"missingness":"missing_if_fewer_than_8_usable_rr_intervals","provenance":"waveform_rr_measurement"},
+    {"feature_id":"p_wave_consistency","group":"rhythm","units":"probability","bounds":[0,1],"missingness":"missing_if_atrial_leads_unusable","provenance":"cross_lead_fiducials"},
+    {"feature_id":"af_probability","group":"rhythm","units":"probability","bounds":[0,1],"missingness":"missing_if_atrial_specialist_ineligible","provenance":"cross_fitted_atrial_rhythm_specialist"},
+    {"feature_id":"afl_probability","group":"rhythm","units":"probability","bounds":[0,1],"missingness":"missing_if_atrial_specialist_ineligible","provenance":"cross_fitted_atrial_rhythm_specialist"},
+    {"feature_id":"heart_rate_bpm","group":"rate","units":"bpm","bounds":[20,300],"missingness":"missing_if_rpeak_detection_ineligible","provenance":"waveform_rr_measurement"},
+    {"feature_id":"bradycardia_probability","group":"rate","units":"probability","bounds":[0,1],"missingness":"missing_if_heart_rate_missing","provenance":"anchored_rate_predicate"},
+    {"feature_id":"tachycardia_probability","group":"rate","units":"probability","bounds":[0,1],"missingness":"missing_if_heart_rate_missing","provenance":"anchored_rate_predicate"},
+    {"feature_id":"ectopy_candidate_count","group":"ectopy","units":"count","bounds":[0,null],"missingness":"missing_if_beat_extraction_ineligible","provenance":"beat_template_extraction"},
+    {"feature_id":"ectopy_candidate_rate","group":"ectopy","units":"fraction","bounds":[0,1],"missingness":"missing_if_beat_extraction_ineligible","provenance":"beat_template_extraction"},
+    {"feature_id":"atrial_ectopy_probability","group":"ectopy","units":"probability","bounds":[0,1],"missingness":"missing_if_ectopy_specialist_ineligible","provenance":"cross_fitted_ectopy_specialist"},
+    {"feature_id":"ventricular_ectopy_probability","group":"ectopy","units":"probability","bounds":[0,1],"missingness":"missing_if_ectopy_specialist_ineligible","provenance":"cross_fitted_ectopy_specialist"},
+    {"feature_id":"prematurity_index","group":"ectopy","units":"ratio","bounds":[0,2],"missingness":"missing_if_no_candidate_beat","provenance":"beat_coupling_measurement"},
+    {"feature_id":"compensatory_pause_ratio","group":"ectopy","units":"ratio","bounds":[0,3],"missingness":"missing_if_no_candidate_beat","provenance":"beat_coupling_measurement"},
+    {"feature_id":"qrs_duration_ms","group":"conduction","units":"ms","bounds":[40,300],"missingness":"missing_if_qrs_fiducials_ineligible","provenance":"cross_lead_fiducials"},
+    {"feature_id":"rbbb_probability","group":"conduction","units":"probability","bounds":[0,1],"missingness":"missing_if_conduction_specialist_ineligible","provenance":"cross_fitted_conduction_specialist"},
+    {"feature_id":"lbbb_probability","group":"conduction","units":"probability","bounds":[0,1],"missingness":"missing_if_conduction_specialist_ineligible","provenance":"cross_fitted_conduction_specialist"},
+    {"feature_id":"other_conduction_probability","group":"conduction","units":"probability","bounds":[0,1],"missingness":"missing_if_conduction_specialist_ineligible","provenance":"cross_fitted_conduction_specialist"},
+    {"feature_id":"st_elevation_probability","group":"repolarization","units":"probability","bounds":[0,1],"missingness":"missing_if_repolarization_specialist_ineligible","provenance":"cross_fitted_repolarization_specialist"},
+    {"feature_id":"st_depression_probability","group":"repolarization","units":"probability","bounds":[0,1],"missingness":"missing_if_repolarization_specialist_ineligible","provenance":"cross_fitted_repolarization_specialist"},
+    {"feature_id":"t_wave_abnormality_probability","group":"repolarization","units":"probability","bounds":[0,1],"missingness":"missing_if_repolarization_specialist_ineligible","provenance":"cross_fitted_repolarization_specialist"},
+    {"feature_id":"qtc_ms","group":"repolarization","units":"ms","bounds":[200,800],"missingness":"missing_if_qt_fiducials_ineligible","provenance":"waveform_qt_measurement"},
+    {"feature_id":"paced_spike_probability","group":"pacing","units":"probability","bounds":[0,1],"missingness":"missing_if_pacing_specialist_ineligible","provenance":"cross_fitted_pacing_specialist"},
+    {"feature_id":"spike_qrs_coupling_probability","group":"pacing","units":"probability","bounds":[0,1],"missingness":"missing_if_no_candidate_spikes","provenance":"multilead_pacing_detector"},
+    {"feature_id":"paced_qrs_probability","group":"pacing","units":"probability","bounds":[0,1],"missingness":"missing_if_qrs_morphology_ineligible","provenance":"cross_fitted_pacing_specialist"},
+    {"feature_id":"eligible_lead_fraction","group":"quality","units":"fraction","bounds":[0,1],"missingness":"never","provenance":"shared_signal_quality"},
+    {"feature_id":"high_frequency_noise_ratio","group":"quality","units":"ratio","bounds":[0,1],"missingness":"missing_per_unavailable_lead","provenance":"shared_signal_quality"},
+    {"feature_id":"fiducial_completeness","group":"quality","units":"fraction","bounds":[0,1],"missingness":"missing_if_no_fiducial_attempt","provenance":"shared_signal_quality"},
+    {"feature_id":"global_normal_probability","group":"normality","units":"probability","bounds":[0,1],"missingness":"missing_if_normality_specialist_ineligible","provenance":"cross_fitted_normality_specialist"},
+    {"feature_id":"residual_anomaly_probability","group":"normality","units":"probability","bounds":[0,1],"missingness":"missing_if_normality_specialist_ineligible","provenance":"cross_fitted_normality_specialist"}
+  ]
+}

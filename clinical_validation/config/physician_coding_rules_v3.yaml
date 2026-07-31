@@ -1,0 +1,329 @@
+{
+  "version": 3,
+  "rule_version": "physician_coding_v3.0.0",
+  "text_diagnosis_rules": [
+    {
+      "id": "PHYS-V3-RHY-SINUS",
+      "rule_type": "text_diagnosis",
+      "axis": "rhythm",
+      "finding": "sinus",
+      "terms": ["sinus rhythm", "normal sinus rhythm"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-RHY-SINUS-BRADY",
+      "rule_type": "text_diagnosis",
+      "axis": "rhythm",
+      "finding": "sinus_bradycardia",
+      "terms": ["sinus bradycardia"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-RHY-SINUS-TACHY",
+      "rule_type": "text_diagnosis",
+      "axis": "rhythm",
+      "finding": "sinus_tachycardia",
+      "terms": ["sinus tachycardia"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-RHY-AF",
+      "rule_type": "text_diagnosis",
+      "axis": "rhythm",
+      "finding": "af",
+      "terms": ["atrial fibrillation", "afib", "af"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-RHY-AFL",
+      "rule_type": "text_diagnosis",
+      "axis": "rhythm",
+      "finding": "afl",
+      "terms": ["atrial flutter", "afl"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-RHY-SV",
+      "rule_type": "text_diagnosis",
+      "axis": "rhythm",
+      "finding": "other_arrhythmia",
+      "terms": [
+        "supraventricular tachycardia",
+        "wandering atrial pacemaker",
+        "pacemaker migration through the atrium"
+      ],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-ECT-APB",
+      "rule_type": "text_diagnosis",
+      "axis": "ectopy",
+      "finding": "atrial_premature",
+      "terms": [
+        "premature atrial complexes",
+        "premature atrial complex",
+        "atrial premature beats",
+        "atrial premature beat",
+        "premature atrial beats",
+        "supraventricular extrasystole",
+        "pac",
+        "apb"
+      ],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-ECT-PVC",
+      "rule_type": "text_diagnosis",
+      "axis": "ectopy",
+      "finding": "ventricular_premature",
+      "terms": [
+        "premature ventricular complexes",
+        "premature ventricular complex",
+        "ventricular premature beats",
+        "ventricular premature beat",
+        "ventricular extrasystole",
+        "pvc",
+        "vpb"
+      ],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-ECT-UNSPECIFIED",
+      "rule_type": "text_diagnosis",
+      "axis": "ectopy",
+      "finding": "unspecified_ectopy",
+      "terms": ["premature beats", "premature beat", "ectopy", "extrasystole"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-CON-RBBB",
+      "rule_type": "text_diagnosis",
+      "axis": "conduction",
+      "finding": "rbbb_spectrum",
+      "terms": ["right bundle branch block", "rbbb"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-CON-LBBB",
+      "rule_type": "text_diagnosis",
+      "axis": "conduction",
+      "finding": "lbbb_spectrum",
+      "terms": ["left bundle branch block", "lbbb"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-CON-OTHER",
+      "rule_type": "text_diagnosis",
+      "axis": "conduction",
+      "finding": "other_conduction",
+      "terms": [
+        "intraventricular conduction delay",
+        "first-degree atrioventricular block",
+        "first degree atrioventricular block",
+        "sinoatrial block",
+        "wpw syndrome",
+        "shortening of the pq interval",
+        "blockade of the anterior superior branch",
+        "blockade of the anterior-palpebral branch",
+        "blockade of the posterior inferior branch"
+      ],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-REP-STE",
+      "rule_type": "text_diagnosis",
+      "axis": "repolarization",
+      "finding": "st_elevation",
+      "terms": [
+        "st elevation",
+        "st-segment elevation",
+        "st segment elevation",
+        "elevation st segment",
+        "early ventricular repolarization syndrome"
+      ],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-REP-STD",
+      "rule_type": "text_diagnosis",
+      "axis": "repolarization",
+      "finding": "st_depression",
+      "terms": ["st depression", "st-segment depression", "st segment depression"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-REP-T",
+      "rule_type": "text_diagnosis",
+      "axis": "repolarization",
+      "finding": "t_wave_abnormality",
+      "terms": [
+        "negative t wave",
+        "negative t waves",
+        "negative t in",
+        "t-wave inversion",
+        "t wave inversion",
+        "t-wave abnormality",
+        "t wave abnormality"
+      ],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-REP-QTC",
+      "rule_type": "text_diagnosis",
+      "axis": "repolarization",
+      "finding": "qtc_abnormality",
+      "terms": ["qtc prolongation", "prolonged qtc", "qtc abnormality"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-PACING",
+      "rule_type": "text_diagnosis",
+      "axis": "pacing",
+      "finding": "present",
+      "terms": ["paced rhythm", "electronic pacemaker", "pacing spikes"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-RESIDUAL-DIAGNOSIS",
+      "rule_type": "text_diagnosis",
+      "axis": "residual",
+      "finding": "other_abnormal",
+      "terms": [
+        "myocardial infarction",
+        "ventricular hypertrophy",
+        "right ventricular hypertrophy",
+        "left ventricular hypertrophy"
+      ],
+      "fields": ["primary_diagnosis", "rationale"]
+    }
+  ],
+  "text_observation_rules": [
+    {
+      "id": "PHYS-V3-OBS-ST-DEVIATION-TEXT",
+      "rule_type": "text_observation",
+      "observation": "st_deviation",
+      "axis": "repolarization",
+      "finding": "unspecified_repolarization",
+      "terms": ["st deviation"],
+      "fields": ["primary_diagnosis", "rationale"]
+    },
+    {
+      "id": "PHYS-V3-OBS-Q-WAVE-TEXT",
+      "rule_type": "text_observation",
+      "observation": "q_wave",
+      "axis": "observation",
+      "finding": "q_wave",
+      "terms": ["q wave", "negative q wave", "negative q in"],
+      "fields": ["primary_diagnosis", "rationale"]
+    }
+  ],
+  "checkbox_observation_rules": [
+    {
+      "id": "PHYS-V3-OBS-RR",
+      "rule_type": "checkbox_observation",
+      "field": "evidence_rr_irregularity",
+      "observation": "rr_irregularity"
+    },
+    {
+      "id": "PHYS-V3-OBS-P-WAVE",
+      "rule_type": "checkbox_observation",
+      "field": "evidence_absent_p_waves",
+      "observation": "absent_p_waves"
+    },
+    {
+      "id": "PHYS-V3-OBS-PREMATURE",
+      "rule_type": "checkbox_observation",
+      "field": "evidence_premature_beat",
+      "observation": "premature_beat"
+    },
+    {
+      "id": "PHYS-V3-OBS-WIDE-QRS",
+      "rule_type": "checkbox_observation",
+      "field": "evidence_wide_qrs",
+      "observation": "wide_qrs"
+    },
+    {
+      "id": "PHYS-V3-OBS-BBB",
+      "rule_type": "checkbox_observation",
+      "field": "evidence_bundle_branch_pattern",
+      "observation": "bundle_branch_pattern"
+    },
+    {
+      "id": "PHYS-V3-OBS-ST",
+      "rule_type": "checkbox_observation",
+      "field": "evidence_st_deviation",
+      "observation": "st_deviation"
+    },
+    {
+      "id": "PHYS-V3-OBS-QTC",
+      "rule_type": "checkbox_observation",
+      "field": "evidence_qtc_abnormality",
+      "observation": "qtc_abnormality"
+    },
+    {
+      "id": "PHYS-V3-OBS-PACED",
+      "rule_type": "checkbox_observation",
+      "field": "evidence_paced_morphology",
+      "observation": "paced_morphology"
+    },
+    {
+      "id": "PHYS-V3-OBS-NOISE",
+      "rule_type": "checkbox_observation",
+      "field": "evidence_lead_noise",
+      "observation": "lead_noise"
+    },
+    {
+      "id": "PHYS-V3-OBS-OTHER",
+      "rule_type": "checkbox_observation",
+      "field": "evidence_other",
+      "observation": "other_observation_unspecified"
+    }
+  ],
+  "axis_derivation_rules": [
+    {
+      "id": "PHYS-V3-DERIVE-ECTOPY-PRESENCE",
+      "rule_type": "axis_derivation",
+      "requires_observations": ["premature_beat"],
+      "axis": "ectopy",
+      "finding": "unspecified_ectopy"
+    },
+    {
+      "id": "PHYS-V3-DERIVE-CONDUCTION-PRESENCE",
+      "rule_type": "axis_derivation",
+      "requires_observations": ["bundle_branch_pattern"],
+      "axis": "conduction",
+      "finding": "unspecified_conduction"
+    },
+    {
+      "id": "PHYS-V3-DERIVE-REPOLARIZATION-PRESENCE",
+      "rule_type": "axis_derivation",
+      "requires_any_observation": ["st_deviation", "qtc_abnormality"],
+      "axis": "repolarization",
+      "finding": "unspecified_repolarization"
+    },
+    {
+      "id": "PHYS-V3-DERIVE-PACING-PRESENCE",
+      "rule_type": "axis_derivation",
+      "requires_observations": ["paced_morphology"],
+      "axis": "pacing",
+      "finding": "present"
+    }
+  ],
+  "normality_resolution": {
+    "explicit_normal_terms": [
+      "normal ecg",
+      "normal electrocardiogram",
+      "normal sinus rhythm",
+      "normak ecg"
+    ],
+    "abnormal_precedence": true,
+    "sinus_alone": "indeterminate",
+    "no_assertion": "indeterminate"
+  },
+  "uninterpretable_terms": [
+    "artifact prevents assessment",
+    "uninterpretable",
+    "cannot assess due to artifact",
+    "too noisy to interpret"
+  ]
+}

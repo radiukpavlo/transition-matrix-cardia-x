@@ -1,0 +1,62 @@
+# CARDIA-X CPU reference lock.
+# Generated from the verified 2026-07-24 Python 3.13.6 Windows reference
+# environment. Direct and runtime-transitive packages are exact-pinned.
+# The release environment audit records this file's SHA-256 plus every
+# installed distribution's METADATA/RECORD SHA-256.
+aiohappyeyeballs==2.7.1
+aiohttp==3.14.2
+aiosignal==1.4.0
+attrs==26.1.0
+certifi==2026.6.17
+cffi==2.1.0
+charset-normalizer==3.4.7
+colorama==0.4.6
+contourpy==1.3.3
+cycler==0.12.1
+et_xmlfile==2.0.0
+filelock==3.31.2
+fonttools==4.59.2
+frozenlist==1.8.0
+fsspec==2026.6.0
+idna==3.18
+iniconfig==2.3.0
+invoke==3.0.3
+Jinja2==3.1.6
+joblib==1.5.2
+kiwisolver==1.4.9
+MarkupSafe==3.0.3
+matplotlib==3.11.1
+mpmath==1.3.0
+multidict==6.7.1
+mypy==2.3.0
+mypy_extensions==1.1.0
+networkx==3.6.1
+numpy==2.4.6
+openpyxl==3.1.5
+packaging==25.0
+pandas==3.0.3
+pathspec==1.1.1
+pillow==11.3.0
+pluggy==1.6.0
+propcache==0.5.2
+pyarrow==24.0.0
+pycparser==3.0
+Pygments==2.19.2
+pyparsing==3.2.3
+pytest==9.1.1
+python-dateutil==2.9.0.post0
+requests==2.34.2
+ruff==0.15.22
+scikit-learn==1.9.0
+scipy==1.18.0
+setuptools==83.0.0
+six==1.17.0
+soundfile==0.14.0
+sympy==1.14.0
+threadpoolctl==3.6.0
+torch==2.13.0
+typing_extensions==4.15.0
+tzdata==2025.2
+urllib3==2.7.0
+wfdb==4.3.1
+yarl==1.24.5

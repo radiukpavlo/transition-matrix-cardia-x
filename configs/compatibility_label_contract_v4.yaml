@@ -1,0 +1,42 @@
+{
+  "version": 4,
+  "contract_id": "compatibility_v4",
+  "label_order": [
+    "Normal",
+    "PVC",
+    "APB",
+    "RBBB spectrum",
+    "LBBB spectrum",
+    "AF",
+    "AFL",
+    "Paced",
+    "Other / unmapped"
+  ],
+  "specific_labels": [
+    "PVC",
+    "APB",
+    "RBBB spectrum",
+    "LBBB spectrum",
+    "AF",
+    "AFL",
+    "Paced"
+  ],
+  "normal_label": "Normal",
+  "residual_label": "Other / unmapped",
+  "aliases": {
+    "PAC": "APB",
+    "VPB": "PVC",
+    "RBBB": "RBBB spectrum",
+    "LBBB": "LBBB spectrum",
+    "Pacing": "Paced",
+    "Other abnormal": "Other / unmapped"
+  },
+  "constraints": {
+    "normal_exclusive": true,
+    "residual_exclusive": true,
+    "nonempty": true,
+    "af_afl_mutually_exclusive": true,
+    "mixed_ectopy_allowed": true,
+    "pacing_conduction_cooccurrence": true
+  }
+}

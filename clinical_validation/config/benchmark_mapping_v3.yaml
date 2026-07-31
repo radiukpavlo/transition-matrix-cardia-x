@@ -1,0 +1,195 @@
+{
+  "version": 3,
+  "source_contract": "ptbxl_1.0.3",
+  "statement_metadata_path": "data/raw/ptbxl/ptb-xl-a-large-publicly-available-electrocardiography-dataset-1.0.3/scp_statements.csv",
+  "presence_categories": ["rhythm", "form"],
+  "confidence_bands": {
+    "accepted_min": 80,
+    "uncertain_min": 50,
+    "ignored_below": 50
+  },
+  "explicit_residual_codes": {
+    "ABQRS": "Abnormal QRS morphology has no dedicated compatibility class.",
+    "ALMI": "Myocardial infarction is retained as residual abnormality.",
+    "AMI": "Myocardial infarction is retained as residual abnormality.",
+    "ANEUR": "Ventricular aneurysm has no dedicated compatibility class.",
+    "ASMI": "Myocardial infarction is retained as residual abnormality.",
+    "EL": "Electrolyte-related abnormality has no dedicated compatibility class.",
+    "HVOLT": "High voltage has no dedicated compatibility class.",
+    "ILMI": "Myocardial infarction is retained as residual abnormality.",
+    "IMI": "Myocardial infarction is retained as residual abnormality.",
+    "INJAL": "Myocardial injury is retained as residual abnormality.",
+    "INJAS": "Myocardial injury is retained as residual abnormality.",
+    "INJIL": "Myocardial injury is retained as residual abnormality.",
+    "INJIN": "Myocardial injury is retained as residual abnormality.",
+    "INJLA": "Myocardial injury is retained as residual abnormality.",
+    "IPLMI": "Myocardial infarction is retained as residual abnormality.",
+    "IPMI": "Myocardial infarction is retained as residual abnormality.",
+    "LAO/LAE": "Atrial enlargement has no dedicated compatibility class.",
+    "LMI": "Myocardial infarction is retained as residual abnormality.",
+    "LVH": "Ventricular hypertrophy has no dedicated compatibility class.",
+    "LVOLT": "Low voltage has no dedicated compatibility class.",
+    "PMI": "Myocardial infarction is retained as residual abnormality.",
+    "QWAVE": "Pathologic Q-wave morphology has no dedicated compatibility class.",
+    "RAO/RAE": "Atrial enlargement has no dedicated compatibility class.",
+    "RVH": "Ventricular hypertrophy has no dedicated compatibility class.",
+    "SEHYP": "Septal hypertrophy has no dedicated compatibility class.",
+    "VCLVH": "Voltage criteria for LVH have no dedicated compatibility class."
+  },
+  "rules": [
+    {
+      "id": "BENCH-NORMALITY-NORM-V3",
+      "axis": "normality",
+      "finding": "normal",
+      "match": "exact_ci",
+      "terms": ["NORM", "Normal", "normal ECG"]
+    },
+    {
+      "id": "BENCH-SINUS-RHYTHM-V3",
+      "axis": "rhythm",
+      "finding": "sinus",
+      "match": "exact_ci",
+      "terms": ["SR", "SARRH", "sinus rhythm", "normal sinus rhythm"]
+    },
+    {
+      "id": "BENCH-SINUS-BRADYCARDIA-V3",
+      "axis": "rhythm",
+      "finding": "sinus_bradycardia",
+      "match": "exact_ci",
+      "terms": ["SBRAD", "sinus bradycardia"]
+    },
+    {
+      "id": "BENCH-SINUS-TACHYCARDIA-V3",
+      "axis": "rhythm",
+      "finding": "sinus_tachycardia",
+      "match": "exact_ci",
+      "terms": ["STACH", "sinus tachycardia"]
+    },
+    {
+      "id": "BENCH-AF-V3",
+      "axis": "rhythm",
+      "finding": "af",
+      "match": "exact_ci",
+      "terms": ["AF", "AFIB", "atrial fibrillation"]
+    },
+    {
+      "id": "BENCH-AFL-V3",
+      "axis": "rhythm",
+      "finding": "afl",
+      "match": "exact_ci",
+      "terms": ["AFL", "AFLT", "atrial flutter"]
+    },
+    {
+      "id": "BENCH-OTHER-RHYTHM-V3",
+      "axis": "rhythm",
+      "finding": "other_arrhythmia",
+      "match": "exact_ci",
+      "terms": ["PSVT", "SVARR", "SVTAC"]
+    },
+    {
+      "id": "BENCH-PVC-V3",
+      "axis": "ectopy",
+      "finding": "ventricular_premature",
+      "match": "exact_ci",
+      "terms": ["PVC", "VPB", "ventricular extrasystole"]
+    },
+    {
+      "id": "BENCH-APB-V3",
+      "axis": "ectopy",
+      "finding": "atrial_premature",
+      "match": "exact_ci",
+      "terms": ["APB", "PAC", "SPAC", "SVPB", "atrial extrasystole", "supraventricular ectopy"]
+    },
+    {
+      "id": "BENCH-ECTOPY-UNSPECIFIED-V3",
+      "axis": "ectopy",
+      "finding": "unspecified_ectopy",
+      "match": "exact_ci",
+      "terms": ["BIGU", "PRC(S)", "TRIGU"]
+    },
+    {
+      "id": "BENCH-RBBB-V3",
+      "axis": "conduction",
+      "finding": "rbbb_spectrum",
+      "match": "exact_ci",
+      "terms": ["RBBB spectrum", "RBBB", "CRBBB", "IRBBB", "right bundle branch block"]
+    },
+    {
+      "id": "BENCH-LBBB-V3",
+      "axis": "conduction",
+      "finding": "lbbb_spectrum",
+      "match": "exact_ci",
+      "terms": ["LBBB spectrum", "LBBB", "CLBBB", "left bundle branch block"]
+    },
+    {
+      "id": "BENCH-OTHER-CONDUCTION-V3",
+      "axis": "conduction",
+      "finding": "other_conduction",
+      "match": "exact_ci",
+      "terms": ["1AVB", "2AVB", "3AVB", "IVCD", "ILBBB", "LPR", "WPW", "LAFB", "LPFB"]
+    },
+    {
+      "id": "BENCH-ST-ELEVATION-V3",
+      "axis": "repolarization",
+      "finding": "st_elevation",
+      "match": "exact_ci",
+      "terms": ["STE_", "ST elevation", "ST-elevation"]
+    },
+    {
+      "id": "BENCH-ST-DEPRESSION-V3",
+      "axis": "repolarization",
+      "finding": "st_depression",
+      "match": "exact_ci",
+      "terms": ["STD_", "ST depression", "ST-depression"]
+    },
+    {
+      "id": "BENCH-T-WAVE-V3",
+      "axis": "repolarization",
+      "finding": "t_wave_abnormality",
+      "match": "exact_ci",
+      "terms": ["INVT", "LOWT", "NDT", "NT_", "TAB_", "T-wave abnormality"]
+    },
+    {
+      "id": "BENCH-NONSPECIFIC-STT-V3",
+      "axis": "repolarization",
+      "finding": "nonspecific_st_t",
+      "match": "exact_ci",
+      "terms": [
+        "NST_",
+        "DIG",
+        "ISC_",
+        "ISCA",
+        "ISCI",
+        "ISCL",
+        "ISCAL",
+        "ISCAN",
+        "ISCAS",
+        "ISCIL",
+        "ISCIN",
+        "ISCLA",
+        "STTC"
+      ]
+    },
+    {
+      "id": "BENCH-QTC-V3",
+      "axis": "repolarization",
+      "finding": "qtc_abnormality",
+      "match": "exact_ci",
+      "terms": ["LNGQT", "Long QT"]
+    },
+    {
+      "id": "BENCH-PACED-V3",
+      "axis": "pacing",
+      "finding": "present",
+      "match": "exact_ci",
+      "terms": ["PACE", "Paced", "paced rhythm", "pacemaker"]
+    },
+    {
+      "id": "BENCH-OTHER-V3",
+      "axis": "residual",
+      "finding": "other_abnormal",
+      "match": "exact_ci",
+      "terms": ["Other / unmapped", "Other abnormal"]
+    }
+  ]
+}

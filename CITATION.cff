@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the CARDIA-X study and this repository."
+title: "transition-matrix-ecg: Reproducible CARDIA-X research software"
+type: software
+version: 1.0.0
+date-released: 2026-07-30
+license: MIT
+authors:
+  - family-names: Radiuk
+    given-names: Pavlo
+repository-code: "https://github.com/radiukpavlo/transition-matrix-ecg"
+keywords:
+  - electrocardiography
+  - explainable artificial intelligence
+  - transition matrix
+  - rough sets
+  - clinical decision support
+  - reproducible research

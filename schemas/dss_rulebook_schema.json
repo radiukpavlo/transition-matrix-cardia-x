@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Transition Matrix ECG DSS Rulebook",
+  "type": "object",
+  "required": ["dataset", "status", "rules_eligible", "ontology_version", "orientation", "selected_features", "discretization_plan", "medical_predicates", "production_rules"],
+  "properties": {
+    "dataset": {"type": "string"},
+    "status": {"enum": ["eligible", "ineligible_no_rulebook"]},
+    "rules_eligible": {"type": "boolean"},
+    "ontology_version": {"type": "string"},
+    "orientation": {"type": "string"},
+    "selected_features": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "label_distribution": {"type": "object", "additionalProperties": {"type": "integer"}},
+    "discretization_plan": {"type": "object"},
+    "decision_system": {"type": "object"},
+    "medical_predicates": {"type": "object"},
+    "eligibility_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["split_manifest_sha256", "model_sha256", "metrics_sha256"],
+      "properties": {
+        "split_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "model_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "metrics_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "eligibility_certificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "algorithm", "threat_model", "ontology_version", "policy_config_sha256", "provenance_hashes", "rulebook_content_sha256", "certificate_sha256"],
+      "properties": {
+        "version": {"const": "tm-ecg-dss-eligibility-v1"},
+        "algorithm": {"const": "sha256"},
+        "threat_model": {"const": "content_integrity_not_authorship"},
+        "ontology_version": {"type": "string", "minLength": 1},
+        "policy_config_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "provenance_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["split_manifest_sha256", "model_sha256", "metrics_sha256"],
+          "properties": {
+            "split_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "model_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "metrics_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "rulebook_content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "certificate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "production_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule_id", "target_label", "antecedents", "confidence", "support_count", "covered_object_ids", "oof_precision", "oof_recall", "fold_stability"],
+        "properties": {
+          "rule_id": {"type": "string", "minLength": 1},
+          "target_label": {"type": "string", "minLength": 1},
+          "antecedents": {"type": "array", "minItems": 1},
+          "confidence": {"type": "number"},
+          "support_count": {"type": "integer"},
+          "support_fraction": {"type": "number"},
+          "covered_object_ids": {"type": "array", "items": {"type": "string"}},
+          "class_distribution": {"type": "object"},
+          "threshold_provenance": {"type": "object"},
+          "source": {"type": "string"},
+          "reduced_from_conditions": {"type": "integer"},
+          "notes": {"type": "string"},
+          "physician_predicate_label": {"type": ["string", "null"]},
+          "predicate_similarity": {"type": "object", "additionalProperties": {"type": "number"}}
+        }
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "ineligible_no_rulebook"}}},
+      "then": {
+        "properties": {
+          "rules_eligible": {"const": false},
+          "selected_features": {"maxItems": 0},
+          "production_rules": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "eligible"}}},
+      "then": {
+        "required": ["eligibility_evidence", "eligibility_certificate"],
+        "properties": {
+          "rules_eligible": {"const": true},
+          "selected_features": {"minItems": 1},
+          "discretization_plan": {
+            "required": ["feature_domains", "class_labels"],
+            "properties": {
+              "feature_domains": {"type": "object", "minProperties": 1},
+              "class_labels": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+            }
+          },
+          "medical_predicates": {"minProperties": 1},
+          "production_rules": {"minItems": 1}
+        }
+      }
+    }
+  ]
+}

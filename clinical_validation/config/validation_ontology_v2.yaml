@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "CARDIA-X multiaxial validation ontology",
+  "axes": {
+    "rhythm": ["sinus", "af", "afl", "other_arrhythmia", "indeterminate"],
+    "ectopy": ["atrial_premature", "ventricular_premature", "mixed_ectopy", "unspecified_ectopy", "indeterminate"],
+    "conduction": ["rbbb_spectrum", "lbbb_spectrum", "other_conduction", "indeterminate"],
+    "repolarization": ["st_elevation", "st_depression", "t_wave_abnormality", "nonspecific_st_t", "qtc_abnormality", "indeterminate"],
+    "pacing": ["absent", "present", "indeterminate"],
+    "normality": ["normal", "abnormal", "indeterminate"],
+    "quality": ["adequate", "noisy_artifact", "indeterminate"],
+    "interpretability": ["interpretable", "limited", "uninterpretable", "indeterminate"]
+  },
+  "dominant_priority": ["Paced", "AF", "AFL", "PVC", "APB", "Mixed ectopy", "Unspecified ectopy", "RBBB spectrum", "LBBB spectrum", "Other conduction", "ST elevation", "ST depression", "T-wave abnormality", "Nonspecific ST-T", "QTc abnormality", "Other abnormal", "Normal", "Uninterpretable", "Indeterminate"]
+}
+

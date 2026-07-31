@@ -1,0 +1,54 @@
+{
+  "version": 3,
+  "policy_id": "cardia_x_acceptance_v3",
+  "default_workbook": "clinical_validation/review/CARDIA-X_clinical_validation_v6.xlsx",
+  "default_workbook_sha256": "fdf9a9a2d9259a5f574ba34aa9e8a601dfc7f29f11f4b5f993b3347a17d5fd2c",
+  "default_provenance": "clinical_validation/cases/private/case_provenance.json",
+  "response_authority": "clinical_validation/config/response_authority_v1.yaml",
+  "ontology": "clinical_validation/config/validation_ontology_v3.yaml",
+  "raw_ontology": "clinical_validation/config/validation_ontology_v2.yaml",
+  "physician_rules": "clinical_validation/config/physician_coding_rules_v3.yaml",
+  "raw_physician_rules": "clinical_validation/config/physician_coding_rules_v2.yaml",
+  "benchmark_mapping": "clinical_validation/config/benchmark_mapping_v3.yaml",
+  "raw_benchmark_mapping": "clinical_validation/config/benchmark_mapping_v2.yaml",
+  "scenario_registry": "clinical_validation/config/scenario_registry_v3.yaml",
+  "clinical_validation": {
+    "raw_endpoint": "audit_only",
+    "raw_immutable_physician_exact_kappa": 0.191116,
+    "harmonized_exact_minimum": 0.7,
+    "harmonized_other_required_minimum": 0.6,
+    "required_unique_b1_cases": 100
+  },
+  "compatibility": {
+    "exact_subset_accuracy_strictly_greater_than": 0.9,
+    "best_class_f1_strictly_greater_than": 0.8,
+    "confirmatory_partition": "sealed_internal_confirmatory_v1",
+    "strict_success_count_formula": "floor(0.90 * n) + 1",
+    "historical_partition_size": 2198,
+    "historical_minimum_exact_successes": 1979
+  },
+  "required_not_estimable": "fail",
+  "non_estimable_required_scenario": "fail",
+  "raw_baseline_tolerance": 1e-6,
+  "expected_population": {
+    "total": 150,
+    "b1_rows": 110,
+    "b1_unique": 100,
+    "b1_repeats": 10,
+    "b2": 40
+  },
+  "exit_codes": {
+    "success": 0,
+    "input_schema": 2,
+    "source_authority": 10,
+    "retention": 11,
+    "leakage": 12,
+    "raw_baseline_regression": 13,
+    "required_not_estimable": 14,
+    "harmonized_exact_below_threshold": 15,
+    "harmonized_other_below_threshold": 16,
+    "compatibility_exact_subset_below_threshold": 17,
+    "best_class_f1_below_threshold": 18,
+    "reproducibility_hash": 19
+  }
+}
